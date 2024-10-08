@@ -8,9 +8,8 @@ on:
 jobs:
   sonarqube:
     runs-on: ubuntu-latest
+    container: sonarqube:latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
       - name: SonarQube analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
